@@ -8,7 +8,7 @@ namespace Drill13
 {
     class Practice
     {
-        public int Method1(int num1,int num2)
+        public void Method1(int num1,int num2)
         {
             num1 = num1 * 2;
             Console.WriteLine(num2);

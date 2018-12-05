@@ -12,6 +12,7 @@ namespace Drill13
         {
             Practice doit = new Practice();
             int number = doit.Method1(1, 2);
+            Console.WriteLine(number);
             Console.ReadLine();
 
         }
