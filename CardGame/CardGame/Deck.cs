@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Deck_Of_Cards
-{ 
-    public class Deck
+namespace CardGame
+{
+    class Deck
     {
+        public List<Card> Cards { get; set; }
         public Deck()
         {
             Cards = new List<Card>();
-            Card cardOne = new Card();
             List<string> Suits = new List<string> { "Clubs", "Hearts", "Diamonds", "Spades" };
+
             List<string> Faces = new List<string>()
                 {
                     "Two","Three", "Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King","Ace"
@@ -29,8 +30,33 @@ namespace Deck_Of_Cards
 
                 }
             }
+
         }
-        public List<Card> Cards { get; set; }
+
+        public Deck Shuffle(Deck deck, int ShuffleTimes = 1)
+        {
+
+            for(int i = 0; i < ShuffleTimes;i++)
+            {
+                List<Card> TempList = new List<Card>();
+                Random random = new Random();
+
+                while (deck.Cards.Count > 0)
+                {
+                    
+
+                    int randomIndex = random.Next(0, deck.Cards.Count);
+                    TempList.Add(deck.Cards[randomIndex]);
+                    deck.Cards.RemoveAt(randomIndex);
+                }
+                deck.Cards = TempList;
+            }
+           
+            return deck;
+
+        }
+
+        
 
     }
 }
