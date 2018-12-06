@@ -10,8 +10,14 @@ namespace CardGame
     {
         static void Main(string[] args)
         {
-            TwentyOneGame game = new TwentyOneGame();
-            game.Players = new List<string>() { "Rohit","joe","dillon" };
+            Game game = new TwentyOneGame();
+            game.Players = new List<Player>();
+            Player player = new Player();
+            player.Name = "Rohit";
+            game = game + player;
+            game = game - player;
+            //game.Players = new List<string>() { "Rohit","joe","dillon" };
+
 
             Deck deck = new Deck();
             deck = deck.Shuffle(deck, 2);

@@ -8,17 +8,18 @@ namespace CardGame
 {
     public abstract class Game
     {
+        public List<Player> Players { get; set; }
         public string Dealer { get; set; }
-        public int score { get; set; }
-        public List<string> Players { get; set; }
+        public int Score { get; set; }
+        
 
         public abstract void Play();
 
         public virtual void ListPlayers()
         {
-            foreach(string player in Players)
+            foreach(Player player in Players)
             {
-                Console.WriteLine(player);
+                Console.WriteLine(player.Name);
             }
         }
     }

@@ -8,7 +8,8 @@ namespace Drill18
 {
     class Emlpoyee:Person, IQuittable
     {
-        
+        public int ID { get; set; }
+
         public void Quit()
         {
             Console.WriteLine("quitting...");
