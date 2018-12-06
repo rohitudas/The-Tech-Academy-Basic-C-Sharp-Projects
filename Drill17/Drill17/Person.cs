@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Drill17
 {
-    class Person
+    abstract class  Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

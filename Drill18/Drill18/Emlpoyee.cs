@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Drill18
 {
-    class Emlpoyee:Person
+    class Emlpoyee:Person, IQuittable
     {
         
+        public void Quit()
+        {
+            Console.WriteLine("quitting...");
+        }
+
+        IQuittable Person = new Emlpoyee();
     }
 }
