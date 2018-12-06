@@ -68,7 +68,34 @@ namespace Drill22
                 }
                 indexCount++;
             }
+
             foreach(string ex in JoeList)
+            {
+                Console.WriteLine(ex);
+            }
+
+
+            List<string> JoeList2 = new List<string>();
+            int count;
+            JoeList2 = Employees.FirstName.Where(x => x == "Joe").ToList();
+            Console.WriteLine("");
+            Console.WriteLine("Same thing but Lambda:");
+            foreach (string ex in JoeList2)
+            {
+                Console.WriteLine(ex);
+            }
+
+            List<int> lst = new List<int>();
+            List<string> list1 = new List<string>();
+            lst = Employees.ID.Where(x => x > 5).ToList();
+            foreach(int id in lst)
+            {
+                list1.Add(Employees.FirstName[id] + " " + Employees.LastName[id]);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Greater then ID 5:");
+            foreach (string ex in list1)
             {
                 Console.WriteLine(ex);
             }
