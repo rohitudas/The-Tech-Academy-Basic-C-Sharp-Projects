@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardGame
+namespace Casino
 {
-    class Deck
+    public class Deck
     {
         public List<Card> Cards { get; set; }
         public Deck()

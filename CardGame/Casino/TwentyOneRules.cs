@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardGame
+namespace Casino.TwentyOne
 {
     public class TwentyOneRules
     {
@@ -21,7 +21,8 @@ namespace CardGame
             [Face.Ten]=10,
             [Face.Jack]=10,
             [Face.Queen]=10,
-            [Face.King]=10
+            [Face.King]=10,
+            [Face.Ace]= 1
         };
 
         public static int[] GetAllPossibleHandValues(List<Card> Hand)

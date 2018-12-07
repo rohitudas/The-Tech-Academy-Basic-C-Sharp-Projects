@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Casino;
+using Casino.TwentyOne;
+
 
 namespace CardGame
 {
@@ -11,9 +14,7 @@ namespace CardGame
     {
         static void Main(string[] args)
         {
-            string text = File.ReadAllText(@"C:\Users\rohit\OneDrive\Desktop\testLog\log.txt");
-            File.WriteAllText(@"C:\Users\rohit\OneDrive\Desktop\testLog\log.txt", text);
-
+           
             Console.WriteLine("Welcome lets play. What is your name?:");
             string playerName = Console.ReadLine();
             Console.WriteLine("How much did you bring to spend:");
