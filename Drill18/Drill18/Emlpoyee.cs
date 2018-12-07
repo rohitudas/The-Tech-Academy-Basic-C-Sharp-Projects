@@ -15,6 +15,5 @@ namespace Drill18
             Console.WriteLine("quitting...");
         }
 
-        IQuittable Person = new Emlpoyee();
     }
 }

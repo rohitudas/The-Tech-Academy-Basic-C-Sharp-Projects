@@ -14,7 +14,8 @@ namespace Drill18
             emlpoyee.firstName = "Sample";
             emlpoyee.lastName = "Student";
             emlpoyee.SayName();
-
+            IQuittable quit = new Emlpoyee();
+            quit.Quit();
             Console.ReadLine();
         }
     }
