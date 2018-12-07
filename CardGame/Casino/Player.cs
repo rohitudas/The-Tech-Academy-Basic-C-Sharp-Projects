@@ -8,6 +8,7 @@ namespace Casino
 {
     public class Player
     {
+        
         public Player(string name, int beginingBalance)
         {
             Hand = new List<Card>();
@@ -20,7 +21,7 @@ namespace Casino
         public string Name { get; set; }
         public bool IsActive { get; set; }
         public bool Stay { get; set; }
-
+        public Guid Id { get; set; }
         public bool Bet(int amount)
         {
             if (Balance - amount < 0)

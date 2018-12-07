@@ -14,7 +14,6 @@ namespace CardGame
     {
         static void Main(string[] args)
         {
-           
             Console.WriteLine("Welcome lets play. What is your name?:");
             string playerName = Console.ReadLine();
             Console.WriteLine("How much did you bring to spend:");
@@ -25,7 +24,12 @@ namespace CardGame
             {
                 Player player = new Player(playerName, bank);
                 Game game = new TwentyOneGame();
-                game += player;
+                player.Id = Guid.NewGuid();
+                using (StreamWriter file = new StreamWriter(@"C:\Users\rohit\source\repos\The-Tech-Academy-Basic-C-Sharp-Projects\CardGame\CardGame\Log\log.txt", true))
+                {
+                    file.WriteLine(player.Id);
+                }
+                    game += player;
                 player.IsActive = true;
                 while(player.IsActive && player.Balance > 0)
                 {
