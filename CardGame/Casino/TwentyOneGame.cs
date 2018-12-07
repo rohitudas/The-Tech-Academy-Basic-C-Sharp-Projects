@@ -22,11 +22,22 @@ namespace Casino.TwentyOne
             Dealer.Stay = false;
             Dealer.Deck = new Deck();
             Dealer.Deck.Shuffle(Dealer.Deck,3);
-            Console.Write("Place your bet:");
 
             foreach(Player player in Players)
             {
-                int bet = Convert.ToInt32(Console.ReadLine());
+                bool validAnswer = false;
+                int bet = 0;
+                while (!validAnswer)
+                {
+                    Console.Write("Place your bet:");
+                    validAnswer = int.TryParse(Console.ReadLine(), out bet);
+                    if (!validAnswer || bet < 0)
+                    {
+                        Console.WriteLine("Please enter Valid Digits without loose change or negative amount");
+                        if (bet < 0) validAnswer = false;
+                    }
+                }
+                
                 bool sucessfullyBet = player.Bet(bet);
                 if (!sucessfullyBet)
                 {
@@ -143,8 +154,9 @@ namespace Casino.TwentyOne
                 }
                 else if(playerWon == true)
                 {
-                    Console.WriteLine("{0} won {1}!", player.Name, Bets[player]);
+                    Console.Write("{0} won {1}!", player.Name, Bets[player]);
                     player.Balance += (Bets[player] * 2);
+                    Console.WriteLine(" Your balance is {0}", player.Balance);
                     Dealer.Balance -= Bets[player];
                 }
                 else

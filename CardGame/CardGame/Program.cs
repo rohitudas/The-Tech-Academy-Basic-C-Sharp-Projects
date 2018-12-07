@@ -16,8 +16,20 @@ namespace CardGame
         {
             Console.WriteLine("Welcome lets play. What is your name?:");
             string playerName = Console.ReadLine();
-            Console.WriteLine("How much did you bring to spend:");
-            int bank = Convert.ToInt32(Console.ReadLine());
+            bool validAnswer = false;
+            int bank = 0;
+            while (!validAnswer)
+            {
+                Console.WriteLine("How much did you bring to spend:");
+                validAnswer = int.TryParse(Console.ReadLine(), out bank);
+                if (!validAnswer || bank < 0)
+                {
+                    Console.WriteLine("Please Enter Valid Digits only, no loose change or negative amounts.");
+                    validAnswer = false;
+                }
+            }
+          
+           
             Console.WriteLine("Hello, {0}! Would you like to join a game fo 21?", playerName);
             string answer = Console.ReadLine().ToLower();
             if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "yaeh" || answer == "yse")
@@ -33,7 +45,14 @@ namespace CardGame
                 player.IsActive = true;
                 while(player.IsActive && player.Balance > 0)
                 {
-                    game.Play();
+                    try
+                    {
+                        game.Play();
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("An error occured please contact your system Adminstrator");
+                    }
                 }
                 game -= player;
                 Console.WriteLine("Thank you for playing!");
