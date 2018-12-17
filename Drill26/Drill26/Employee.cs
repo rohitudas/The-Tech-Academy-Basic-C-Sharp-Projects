@@ -8,11 +8,8 @@ namespace Drill26
 {
     public class Employee
     {
-        public Employee(string name) : this(name, 0)
-        {
-
-        }
-        public Employee(string name, int id)
+     
+        public Employee(string name = "", int id = 0)
         {
             Name = name;
             ID = id;

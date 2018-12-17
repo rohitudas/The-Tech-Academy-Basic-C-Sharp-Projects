@@ -10,8 +10,14 @@ namespace Drill26
     {
         static void Main(string[] args)
         {
-            var list = new LinkedList<int>();
+            Employee Geoff = new Employee();
+            Geoff.Name = "Geoff";
             const string CreatorName = "Rohit";
+            Console.WriteLine("Made by {0}", CreatorName);
+            Console.WriteLine(Geoff.Name);
+            Console.ReadLine();
+
+
         }
     }
 }
